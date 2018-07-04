@@ -15,6 +15,11 @@ INSERT INTO price(amount, price, product_id) VALUES (1, 2.5, 3);
 INSERT INTO price(amount, price, product_id) VALUES (4, 7.5, 3);
 INSERT INTO price(amount, price, product_id) VALUES (1, 2.0, 5);
 INSERT INTO price(amount, price, product_id) VALUES (8, 14.0, 5);
-INSERT INTO price(amount, price, product_id) VALUES (8, 14.0, 7);
+-- INSERT INTO price(amount, price, product_id) VALUES (8, 14.0, 7);
 
+INSERT INTO cart(id) VALUES (1);
+INSERT INTO cart(id) VALUES (2);
 
+INSERT INTO cart_item(cart_id, product_id, amount) VALUES (1, 1, 5);
+INSERT INTO cart_item(cart_id, product_id, amount) VALUES (1, 2, 12);
+INSERT INTO cart_item(cart_id, product_id, amount) VALUES (2, 3, 6);
