@@ -26,6 +26,7 @@ END
 $$ LANGUAGE plpgsql;
 
 SELECT checkout(1);
+EXPLAIN ANALYZE SELECT checkout(1);
 
 
 
