@@ -10,8 +10,6 @@ BEGIN
   FOR cart_item_row IN SELECT * FROM
     cart_item WHERE cart_item.cart_id = cart_id_to_check ORDER BY cart_item.product_id
     LOOP
-
-
       amount := cart_item_row.amount;
 
       FOR price_row IN SELECT * FROM price
@@ -29,7 +27,7 @@ BEGIN
 END
 $$ LANGUAGE plpgsql;
 
-SELECT checkout(2);
+SELECT checkout(1);
 
 
 
