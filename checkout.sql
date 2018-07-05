@@ -12,14 +12,12 @@ BEGIN
     LOOP
       amount := cart_item_row.amount;
 
-      FOR price_row IN SELECT * FROM price
+      FOR price_row IN SELECT * FROM price WHERE price.product_id = cart_item_row.product_id
             ORDER BY price.product_id ASC, price.amount DESC
         LOOP
-          IF cart_item_row.product_id = price_row.product_id THEN
-              temp := amount / price_row.amount;
-              amount := amount - (price_row.amount * temp);
-              result := result + (temp * price_row.price);
-          END IF;
+          temp := amount / price_row.amount;
+          amount := amount - (price_row.amount * temp);
+          result := result + (temp * price_row.price);
         END LOOP;
   END LOOP;
 
